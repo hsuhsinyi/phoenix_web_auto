@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages>
+	<!-- 注册页面 -->
+	<page name="com.lemon.phoenix.tester.RegisterPage" desc="注册页面">
+		<locator by="id" value="mobilephone" desc="账户输入框"></locator>
+		<locator by="id" value="password" desc="密码输入框"></locator>
+		<locator by="id" value="pwdconfirm" desc="重复密码输入框"></locator>
+		<locator by="id" value="signup-button" desc="注册按钮"></locator>
+		<locator by="className" value="tips" desc="提示内容元素"></locator>
+	</page>
+	
+	<!-- 登录页面 -->
+	<page name="com.lemon.phoenix.tester.LoginPage" desc="登录页面">
+		<locator by="name" value="mobilephone" desc="账户输入框"></locator>
+		<locator by="id" value="password" desc="密码输入框"></locator>
+		<locator by="id" value="login" desc="登录按钮"></locator>
+		<locator by="id" value="reset" desc="重置按钮"></locator>
+	</page>
+</pages>
