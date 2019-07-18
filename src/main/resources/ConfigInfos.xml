@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs>
+	<platformName value="Android"></platformName>
+	<appPackage value="com.lemon.lemonban"></appPackage>
+	<appActivity value=".activity.WelcomeActivity"></appActivity>
+	<classes>
+		<class name="com.lemon.phoenix.tester.LoginTest" />
+	</classes>
+</configs>

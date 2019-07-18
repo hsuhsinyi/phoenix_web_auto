@@ -1,24 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.lemon.api.auto</groupId>
-	<artifactId>phoenix_web_auto_8</artifactId>
+	<groupId>com.lemon</groupId>
+	<artifactId>phoenix_app_auto_java9</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-		<!-- ####################### selenium ######################### -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>2.53.1</version>
-		</dependency>
 
+		<!-- java-client依赖包 -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>6.1.0</version>
+		</dependency>
 		<!-- ####################### testng ######################### -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.8.8</version>
+			<version>6.11</version>
 		</dependency>
 
 		<dependency>
@@ -49,9 +48,7 @@
 		</dependency>
 
 		<!-- ####################### reportng ######################### -->
-		<!-- 自定义报表：去收集testng的测试细节信息，然后自己渲染出来
-			1：html   2:excel写（poi）
-		 -->
+		<!-- 自定义报表：去收集testng的测试细节信息，然后自己渲染出来 1：html 2:excel写（poi） -->
 		<dependency>
 			<groupId>org.uncommons</groupId>
 			<artifactId>reportng</artifactId>
@@ -63,42 +60,27 @@
 			<artifactId>guice</artifactId>
 			<version>3.0</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1.1</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<mainClass>com.lemon.phoenix.util.AppiumServerUtil</mainClass>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
-
-			<!-- 实现方式：集成maven的surefire插件, Surefire插件用于Maven项目的test阶段，以执行单元测试。
-			集成后我们就可以通过maven命令 maven test 来调动脚本执行了。
-			 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.7.1</version>
-				<configuration>
-					<systemPropertyVariables>
-						<org.uncommons.reportng.escape-output>false</org.uncommons.reportng.escape-output>
-					</systemPropertyVariables>
-					<testFailureIgnore>true</testFailureIgnore>
-					<argLine>
-						-Dfile.encoding=UTF-8
-					</argLine>
-					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-				</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>
