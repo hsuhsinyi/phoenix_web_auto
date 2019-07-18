@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 所有页面的元素的定位信息 -->
+<pages>
+	<!-- 注册页面的所有的元素定位信息 -->
+	<page pageName="注册页面" name="Register_Test_Case">
+		<!-- 手机号输入框的定位信息描述：具体的元素、定位方式、定位值 ： 手机号输入框、id、mobilephone -->
+		<!--
+			手机号输入框、id、mobilephone
+			密码输入框、id、password 
+			重复密码输入框、id、pwdconfirm 
+		 -->
+		 <locator name="手机号输入框" type="id" value="mobilephone" option="输入内容"></locator>
+		 <locator name="密码输入框" type="id" value="password"  option="输入内容"></locator>
+		 <locator name="重复密码输入框" type="id" value="pwdconfirm" option="输入内容"></locator>
+		 <locator name="提示信息元素" type="className" value="tips"  option="输入内容"></locator>
+		 <locator name="验证码输入框" type="id" value="verifycode" displayed="true"  option="输入内容"></locator>
+		 <locator name="注册按钮" type="id" value="signup-button" clickable="true"  option="点击"></locator>
+	</page>
+	
+	<!-- 登录页面的所有的元素定位信息 -->
+	<page name="Login_Test_Case">
+		 <locator name="手机号输入框" type="id" value="mobilephone"></locator>
+		 <locator name="密码输入框" type="id" value="password"></locator>
+		 <locator name="登录按钮" type="id" value="login"></locator>
+		 <locator name="提示信息元素" type="className" value="tips"></locator>
+	</page>
+</pages>

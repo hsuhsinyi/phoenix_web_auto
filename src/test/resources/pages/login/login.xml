@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 登录页面的所有的元素定位信息 -->
+<page name="Login_Test_Case">
+	<locator name="手机号输入框" type="id" value="mobilephone"></locator>
+	<locator name="密码输入框" type="id" value="password"></locator>
+	<locator name="登录按钮" type="id" value="login"></locator>
+	<locator name="提示信息元素" type="className" value="tips"></locator>
+</page>
