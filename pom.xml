@@ -83,4 +83,19 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<!-- 代码扫描步骤 -->
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.host.url>http://127.0.0.1:9000</sonar.host.url>
+                <sonar.login>480223ccce09d1327c1829714fb70aee98b11cc0</sonar.login>
+                <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+            </properties>
+        </profile>
+	</profiles>
 </project>
